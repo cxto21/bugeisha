@@ -6,6 +6,8 @@ repo_name: cxto21/bugeisha
 
 theme:
   name: material
+  logo: assets/images/mamuzhka.svg
+  favicon: assets/images/mamuzhka.svg
   language: en
   palette:
     - scheme: default
