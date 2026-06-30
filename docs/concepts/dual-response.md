@@ -1,6 +1,6 @@
 # Dual Response
 
-**Dual response** is the core pattern of Nesa: same route, different output for agents vs humans.
+**Dual response** is the core pattern of Bugeisha: same route, different output for agents vs humans.
 
 ## The pattern
 

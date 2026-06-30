@@ -1,8 +1,8 @@
-site_name: Nesa
+site_name: Bugeisha
 site_description: Ultra-light agent-native micro-framework for Cloudflare Workers
-site_url: https://nesa.dev
-repo_url: https://github.com/cxto21/nesa
-repo_name: cxto21/nesa
+site_url: https://bugeisha.dev
+repo_url: https://github.com/cxto21/bugeisha
+repo_name: cxto21/bugeisha
 
 theme:
   name: material
@@ -88,9 +88,9 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/cxto21/nesa
+      link: https://github.com/cxto21/bugeisha
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/nesa_dev
+      link: https://twitter.com/bugeisha_dev
 
 plugins:
   - search

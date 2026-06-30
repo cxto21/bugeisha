@@ -1,6 +1,6 @@
 # Workers AI Integration
 
-How to use Cloudflare Workers AI with Nesa for model inference.
+How to use Cloudflare Workers AI with Bugeisha for model inference.
 
 ## Overview
 
@@ -25,7 +25,7 @@ binding = "AI"
 
 ```typescript
 // src/handlers/chat.ts
-export const chatHandler = async (request: NesaRequest, env: Env) => {
+export const chatHandler = async (request: BugeishaRequest, env: Env) => {
   const { message } = await request.json()
   
   // Call Workers AI
@@ -50,7 +50,7 @@ const models = {
   image: '@cf/stabilityai/stable-diffusion-xl-base-1.0'
 }
 
-export const aiHandler = async (request: NesaRequest, env: Env) => {
+export const aiHandler = async (request: BugeishaRequest, env: Env) => {
   const { task, input } = await request.json()
   
   const model = models[task] || models.chat
@@ -95,7 +95,7 @@ export const chatWithFallback = async (message: string, env: Env) => {
 Stream responses for better UX:
 
 ```typescript
-export const streamHandler = async (request: NesaRequest, env: Env) => {
+export const streamHandler = async (request: BugeishaRequest, env: Env) => {
   const { message } = await request.json()
   
   const response = await env.AI.run('@cf/meta/llama-3.1-8b-instruct', {

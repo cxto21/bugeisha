@@ -2,18 +2,18 @@
 name: core
 description: >
   Set up an Itty Router app with middleware pipeline for Cloudflare Workers.
-  Use this when creating a new Nesa service, adding routes, or configuring
+  Use this when creating a new Bugeisha service, adding routes, or configuring
   request/response middleware. Covers Router setup, route registration,
   middleware ordering, and the fetch handler export.
 ---
 
 # Skill: core
 
-Itty Router + middleware pipeline. The foundation of every Nesa app.
+Itty Router + middleware pipeline. The foundation of every Bugeisha app.
 
 ```ts
 import { Router, error, json } from 'itty-router';
-import type { NesaRequest, Env } from './types';
+import type { BugeishaRequest, Env } from './types';
 
 const router = Router({
   before: [middleware1, middleware2],  // Request middleware (runs in order)
@@ -53,9 +53,9 @@ cd my-app && npm install && npm run dev
 
 ## Factory pattern
 
-Use `createNesa()` for custom instances with different middleware stacks:
+Use `createBugeisha()` for custom instances with different middleware stacks:
 
 ```ts
-import { createNesa } from './router';
-const adminRouter = createNesa({ middlewares: [auth, rateLimit] });
+import { createBugeisha } from './router';
+const adminRouter = createBugeisha({ middlewares: [auth, rateLimit] });
 ```

@@ -1,6 +1,6 @@
 # Skills
 
-**Skills are guides, not code.** They help you integrate Nesa with Cloudflare services and patterns.
+**Skills are guides, not code.** They help you integrate Bugeisha with Cloudflare services and patterns.
 
 ## What Are Skills?
 

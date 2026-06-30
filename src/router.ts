@@ -1,5 +1,5 @@
 import { Router, error, json } from 'itty-router';
-import type { NesaRequest, Env } from './types';
+import type { BugeishaRequest, Env } from './types';
 import { detectAgent } from './middleware/agent-detect';
 import { cors } from './middleware/cors';
 import { rateLimit } from './middleware/rate-limit';
@@ -24,7 +24,7 @@ const router = Router({
 
   // Error handler
   catch: (err) => {
-    console.error('Nesa error:', err);
+    console.error('Bugeisha error:', err);
     return error(err);
   },
 
@@ -47,8 +47,8 @@ router.get('/agent/tools', agentTools);
 router.all('*', () => error(404, 'Not found'));
 
 // ─── Factory ─────────────────────────────────────────────
-// Create your own Nesa instance with custom config
-export function createNesa(options?: {
+// Create your own Bugeisha instance with custom config
+export function createBugeisha(options?: {
   base?: string;
   middlewares?: any[];
 }) {

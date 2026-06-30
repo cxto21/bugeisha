@@ -1,16 +1,16 @@
-// Nesa — Ultra-light agent-native micro-framework for Cloudflare Workers
+// Bugeisha — Ultra-light agent-native micro-framework for Cloudflare Workers
 //
 // Philosophy: Extreme minimalism. Explicit routes. No magic. Linear flow.
 //
 // Usage:
-//   import nesa from './router';
-//   export default nesa;
+//   import bugeisha from './router';
+//   export default bugeisha;
 //
 // Or customize:
-//   import { createNesa } from './router';
-//   const router = createNesa({ base: '/api', middlewares: [...] });
+//   import { createBugeisha } from './router';
+//   const router = createBugeisha({ base: '/api', middlewares: [...] });
 //   export default router;
 
-export { router as default, createNesa } from './router';
-export type { Env, NesaRequest, NesaHandler, NesaMiddleware } from './types';
+export { router as default, createBugeisha } from './router';
+export type { Env, BugeishaRequest, BugeishaHandler, BugeishaMiddleware } from './types';
 export { detectAgent, cors, auth, rateLimit } from './middleware';

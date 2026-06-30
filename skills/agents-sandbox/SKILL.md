@@ -1,7 +1,7 @@
 ---
 name: agents-sandbox
 description: >
-  Use Cloudflare Sandbox for secure code execution in Nesa agents.
+  Use Cloudflare Sandbox for secure code execution in Bugeisha agents.
   Use this when agents need to run untrusted code, execute LLM-generated
   scripts, or provide isolated environments per agent. Covers setup,
   file operations, command execution, and cost considerations.

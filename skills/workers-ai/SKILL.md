@@ -1,7 +1,7 @@
 ---
 name: workers-ai
 description: >
-  Integrate Cloudflare Workers AI with Nesa agents.
+  Integrate Cloudflare Workers AI with Bugeisha agents.
   Use this when adding AI inference to agent handlers, building
   AI-powered task execution, or connecting LLMs to your agent workflows.
   Covers model selection, streaming, function calling, and cost optimization.
@@ -9,7 +9,7 @@ description: >
 
 # Skill: workers-ai
 
-Workers AI in Nesa agents. Add inference to handlers, not magic.
+Workers AI in Bugeisha agents. Add inference to handlers, not magic.
 
 ## Setup
 
@@ -30,7 +30,7 @@ export interface Env {
 
 ```ts
 // handlers/analyze.ts
-export async function analyze(request: NesaRequest, env: Env) {
+export async function analyze(request: BugeishaRequest, env: Env) {
   const body = await request.json();
   const result = await env.AI.run('@cf/meta/llama-3.1-8b-instruct', {
     messages: [{ role: 'user', content: body.prompt }],

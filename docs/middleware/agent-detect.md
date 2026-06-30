@@ -39,7 +39,7 @@ router.all('*', agentDetect)
 Once detected, use the `isAgent` flag:
 
 ```typescript
-export const homeHandler = async (request: NesaRequest, env: Env) => {
+export const homeHandler = async (request: BugeishaRequest, env: Env) => {
   if (request.isAgent) {
     // JSON response for agents
     return Response.json({

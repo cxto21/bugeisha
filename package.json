@@ -1,5 +1,5 @@
 {
-  "name": "nesa",
+  "name": "bugeisha",
   "version": "0.1.0",
   "description": "Ultra-light agent-native micro-framework for Cloudflare Workers",
   "private": true,

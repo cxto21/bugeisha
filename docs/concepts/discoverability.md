@@ -12,9 +12,9 @@ AI agents need to know:
 
 Without good discoverability, your API is invisible to the agent ecosystem.
 
-## Nesa's Discovery Stack
+## Bugeisha's Discovery Stack
 
-Nesa provides four essential discoverability files:
+Bugeisha provides four essential discoverability files:
 
 1. **robots.txt** – Generic discovery for all bots
 2. **llms.txt** – AI-optimized service description  
@@ -32,7 +32,7 @@ Disallow: /private/
 
 Sitemap: https://your-app.com/sitemap.xml
 
-# Nesa agent endpoints are open
+# Bugeisha agent endpoints are open
 Allow: /agent/
 Allow: /health
 ```
@@ -40,7 +40,7 @@ Allow: /health
 ### 2. llms.txt (Service Description)
 
 ```text
-# Nesa - Agent-Native Framework
+# Bugeisha - Agent-Native Framework
 
 ## Overview
 Ultra-light agent-native micro-framework for Cloudflare Workers. Same routes, different responses: JSON for agents, HTML for humans.
@@ -175,7 +175,7 @@ router.get('/agent/tools', agentTools);
 
 ```ts
 // src/handlers/discoverability.ts
-export function robots(request: NesaRequest): Response {
+export function robots(request: BugeishaRequest): Response {
   const body = `User-agent: *
 Disallow: /admin/
 Sitemap: ${request.url.replace(/robots\.txt$/, 'sitemap.xml')}`;
@@ -185,9 +185,9 @@ Sitemap: ${request.url.replace(/robots\.txt$/, 'sitemap.xml')}`;
   });
 }
 
-export function llms(request: NesaRequest): Response {
+export function llms(request: BugeishaRequest): Response {
   const description = {
-    name: 'My Nesa API',
+    name: 'My Bugeisha API',
     version: '1.0.0',
     description: 'API for managing resources',
     endpoints: [

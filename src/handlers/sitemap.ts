@@ -1,8 +1,8 @@
-import type { NesaRequest, Env } from '../types';
+import type { BugeishaRequest, Env } from '../types';
 
 // Sitemap handler — XML sitemap for agent discovery
 // Helps agents and search engines discover all endpoints
-export function sitemap(request: NesaRequest, env: Env): Response {
+export function sitemap(request: BugeishaRequest, env: Env): Response {
   const url = new URL(request.url);
   const base = `${url.protocol}//${url.host}`;
 

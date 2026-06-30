@@ -1,10 +1,10 @@
-# AGENTS.md — Nesa Framework
+# AGENTS.md — Bugeisha Framework
 
 Agent-native micro-framework for Cloudflare Workers. Ultra-light, explicit routes, no magic.
 
 ## Project Overview
 
-Nesa is a minimal framework for building APIs that serve both humans and AI agents. Same routes, different responses: JSON for agents, HTML for humans.
+Bugeisha is a minimal framework for building APIs that serve both humans and AI agents. Same routes, different responses: JSON for agents, HTML for humans.
 
 **Stack**: TypeScript, Itty Router v5, Cloudflare Workers
 ** Philosophy**: Extreme minimalism. Explicit routes. No magic. Linear flow.
@@ -25,7 +25,7 @@ npm run test:watch   # Run tests in watch mode
 - Explicit route registration (no decorators, no magic)
 - Middleware returns `Response` to stop, `void` to continue
 - Always bind `fetch` to router: `export default { fetch: router.fetch.bind(router) }`
-- Use `NesaRequest` type for request objects with `isAgent` flag
+- Use `BugeishaRequest` type for request objects with `isAgent` flag
 - Handlers receive `(request, env)` — keep them pure when possible
 
 ## Testing Instructions
@@ -46,7 +46,7 @@ npm run test:watch   # Watch mode
 src/
 ├── index.ts              # Entry point + exports
 ├── router.ts             # Core router with middleware pipeline
-├── types.ts              # Env, NesaRequest, NesaHandler types
+├── types.ts              # Env, BugeishaRequest, BugeishaHandler types
 ├── middleware/
 │   ├── agent-detect.ts   # AI/bot/human detection
 │   ├── cors.ts           # CORS preflight handling

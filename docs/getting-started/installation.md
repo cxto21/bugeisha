@@ -11,7 +11,7 @@
 === "npm"
 
     ```bash
-    mkdir my-nesa-app && cd my-nesa-app
+    mkdir my-bugeisha-app && cd my-bugeisha-app
     npm init -y
     npm install itty-router
     npm install -D @cloudflare/workers-types typescript vitest wrangler
@@ -20,7 +20,7 @@
 === "yarn"
 
     ```bash
-    mkdir my-nesa-app && cd my-nesa-app
+    mkdir my-bugeisha-app && cd my-bugeisha-app
     yarn init -y
     yarn add itty-router
     yarn add -D @cloudflare/workers-types typescript vitest wrangler
@@ -29,7 +29,7 @@
 === "pnpm"
 
     ```bash
-    mkdir my-nesa-app && cd my-nesa-app
+    mkdir my-bugeisha-app && cd my-bugeisha-app
     pnpm init
     pnpm add itty-router
     pnpm add -D @cloudflare/workers-types typescript vitest wrangler
@@ -60,7 +60,7 @@ Create `tsconfig.json`:
 Create `wrangler.toml`:
 
 ```toml
-name = "my-nesa-app"
+name = "my-bugeisha-app"
 main = "src/index.ts"
 compatibility_date = "2024-09-25"
 ```
@@ -68,7 +68,7 @@ compatibility_date = "2024-09-25"
 ## Project structure
 
 ```
-my-nesa-app/
+my-bugeisha-app/
 ├── src/
 │   ├── index.ts          # Entry point
 │   ├── router.ts         # Router setup

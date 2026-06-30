@@ -1,11 +1,11 @@
 # Project Structure
 
-Nesa follows a clear, explicit structure. No magic folders, no hidden behavior.
+Bugeisha follows a clear, explicit structure. No magic folders, no hidden behavior.
 
 ## Directory layout
 
 ```
-nesa/
+bugeisha/
 ├── src/
 │   ├── index.ts              # Entry point + exports
 │   ├── router.ts             # Core router with middleware pipeline
@@ -45,7 +45,7 @@ nesa/
 
 ### `src/router.ts`
 
-The heart of your Nesa app. Sets up the router with middleware pipeline:
+The heart of your Bugeisha app. Sets up the router with middleware pipeline:
 
 ```ts
 import { Router, error, json } from 'itty-router';
@@ -76,13 +76,13 @@ export interface Env {
   // AI: Ai;
 }
 
-export interface NesaRequest extends Request {
+export interface BugeishaRequest extends Request {
   agentType?: 'ai' | 'bot' | 'human';
   params?: Record<string, string>;
 }
 
-export type NesaHandler = (
-  request: NesaRequest,
+export type BugeishaHandler = (
+  request: BugeishaRequest,
   env: Env,
   ctx: ExecutionContext,
 ) => Response | Promise<Response>;
@@ -108,7 +108,7 @@ Route handlers that process requests:
 
 ## Conventions
 
-!!! info "Nesa conventions"
+!!! info "Bugeisha conventions"
 
     - **Explicit routes** — No decorators, no magic, no hidden behavior
     - **Middleware returns Response to stop, void to continue**

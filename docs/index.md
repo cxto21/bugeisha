@@ -1,4 +1,4 @@
-# Nesa
+# Bugeisha
 
 **Ultra-light agent-native micro-framework for Cloudflare Workers.**
 
@@ -6,9 +6,9 @@
 
 ---
 
-## Why Nesa?
+## Why Bugeisha?
 
-In 2026, APIs serve two audiences: **humans** and **AI agents**. Most frameworks ignore this reality. Nesa embraces it.
+In 2026, APIs serve two audiences: **humans** and **AI agents**. Most frameworks ignore this reality. Bugeisha embraces it.
 
 **Same routes, different responses.** JSON for agents, HTML for humans. No separate endpoints, no duplication, no magic.
 
@@ -36,9 +36,9 @@ const router = Router();
 router.get('/', (request) => {
   // Agent? JSON. Human? HTML.
   if (request.agentType === 'ai') {
-    return Response.json({ name: 'nesa', version: '0.1.0' });
+    return Response.json({ name: 'bugeisha', version: '0.1.0' });
   }
-  return new Response('<h1>Nesa</h1>', {
+  return new Response('<h1>Bugeisha</h1>', {
     headers: { 'Content-Type': 'text/html' },
   });
 });
@@ -92,13 +92,13 @@ export default { fetch: router.fetch.bind(router) };
 
 !!! quote "Extreme minimalism. Explicit routes. No magic. Linear flow."
 
-    Nesa takes Parina's core principles — clarity over abstraction, control over convenience — and rebuilds them for Cloudflare Workers with Itty Router.
+    Bugeisha takes Parina's core principles — clarity over abstraction, control over convenience — and rebuilds them for Cloudflare Workers with Itty Router.
 
 ---
 
 ## Comparison
 
-| Feature | Nesa | Hono | Express | Agents SDK |
+| Feature | Bugeisha | Hono | Express | Agents SDK |
 |---------|------|------|---------|------------|
 | Agent-native | :material-check: | :material-close: | :material-close: | :material-check: |
 | Dual response | :material-check: | :material-close: | :material-close: | :material-close: |

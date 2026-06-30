@@ -1,7 +1,7 @@
 ---
 name: multi-model
 description: >
-  Orchestrate multiple AI models in a single Nesa workflow.
+  Orchestrate multiple AI models in a single Bugeisha workflow.
   Use this when building multi-model pipelines, routing tasks to
   specialized models, or combining different AI capabilities.
   Covers model routing, fallback chains, and result assembly.

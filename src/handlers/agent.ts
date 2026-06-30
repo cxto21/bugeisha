@@ -1,9 +1,9 @@
-import type { NesaRequest, Env } from '../types';
+import type { BugeishaRequest, Env } from '../types';
 
 // Agent info endpoint — tells AI agents what this service can do
-export function agentInfo(request: NesaRequest, env: Env): Response {
+export function agentInfo(request: BugeishaRequest, env: Env): Response {
   return Response.json({
-    service: 'nesa-app',
+    service: 'bugeisha-app',
     description: 'Agent-optimized Cloudflare Worker',
     capabilities: [
       {

@@ -1,5 +1,5 @@
 // Agent Durable Object — Stateful agent with WebSocket + scheduling
-// Nesa style: explicit, no magic, linear flow
+// Bugeisha style: explicit, no magic, linear flow
 
 import { DurableObject } from "cloudflare:workers";
 

@@ -4,7 +4,7 @@ import { home } from '../handlers/home';
 import { health } from '../handlers/health';
 import { agentInfo } from '../handlers/agent';
 import { agentTools } from '../handlers/agent-tools';
-import type { NesaRequest, Env } from '../types';
+import type { BugeishaRequest, Env } from '../types';
 
 // Mock request helper
 function mockRequest(opts: {
@@ -12,7 +12,7 @@ function mockRequest(opts: {
   method?: string;
   headers?: Record<string, string>;
   agentType?: 'ai' | 'bot' | 'human';
-} = {}): NesaRequest {
+} = {}): BugeishaRequest {
   const url = opts.url ?? 'http://localhost/';
   const headers = new Headers(opts.headers ?? {});
   return {
@@ -20,7 +20,7 @@ function mockRequest(opts: {
     method: opts.method ?? 'GET',
     headers,
     agentType: opts.agentType ?? 'human',
-  } as unknown as NesaRequest;
+  } as unknown as BugeishaRequest;
 }
 
 const mockEnv = {} as Env;
@@ -89,7 +89,7 @@ describe('agentInfo', () => {
     const response = agentInfo(req, mockEnv);
     const body = await response.json();
 
-    expect(body.service).toBe('nesa-app');
+    expect(body.service).toBe('bugeisha-app');
     expect(body.capabilities).toBeDefined();
     expect(body.capabilities.length).toBeGreaterThan(0);
   });

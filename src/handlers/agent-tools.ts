@@ -1,7 +1,7 @@
-import type { NesaRequest, Env } from '../types';
+import type { BugeishaRequest, Env } from '../types';
 
 // Tool definitions for AI function calling (OpenAI/Anthropic format)
-export function agentTools(request: NesaRequest, env: Env): Response {
+export function agentTools(request: BugeishaRequest, env: Env): Response {
   // Define your tools here — these are examples
   const tools = [
     {

@@ -1,7 +1,7 @@
 ---
 name: storage
 description: >
-  Add Cloudflare KV and D1 persistence to a Nesa service. Use this when
+  Add Cloudflare KV and D1 persistence to a Bugeisha service. Use this when
   implementing caching, sessions, feature flags (KV), or relational data
   storage with SQL queries (D1). Covers bindings, CRUD operations, and
   when to use each storage type.

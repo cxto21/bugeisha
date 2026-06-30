@@ -1,5 +1,5 @@
 // Multi-Agent Coordinator — Entry Point
-// Nesa example: coordinate multiple AI agents to complete complex tasks
+// Bugeisha example: coordinate multiple AI agents to complete complex tasks
 import { Router, error, json } from 'itty-router';
 import type { CoordinatorRequest, Env } from './types';
 

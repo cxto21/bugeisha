@@ -1,7 +1,7 @@
 ---
 name: security
 description: >
-  Add CORS headers, rate limiting, and JWT authentication to a Nesa service.
+  Add CORS headers, rate limiting, and JWT authentication to a Bugeisha service.
   Use this when building protected endpoints, handling OPTIONS preflight,
   implementing token-based auth, or protecting against abuse on Cloudflare Workers.
 ---

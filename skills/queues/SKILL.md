@@ -1,7 +1,7 @@
 ---
 name: queues
 description: >
-  Add background job processing to a Nesa service using Cloudflare Queues.
+  Add background job processing to a Bugeisha service using Cloudflare Queues.
   Use this when handling concurrent writes to D1/KV, implementing batch processing,
   offloading heavy work from request handlers, or building ordered processing
   pipelines. Covers queue producers, consumers, and retry configuration.
@@ -17,7 +17,7 @@ Race condition prevention via Cloudflare Queues. Offload writes, process sequent
 # wrangler.toml
 [[queues]]
 binding = "QUEUE"
-queue = "nesa-queue"
+queue = "bugeisha-queue"
 max_retries = 3
 ```
 

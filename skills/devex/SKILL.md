@@ -1,7 +1,7 @@
 ---
 name: devex
 description: >
-  Set up logging, error handling, and environment configuration for a Nesa service.
+  Set up logging, error handling, and environment configuration for a Bugeisha service.
   Use this when adding structured logging, consistent error responses, typed
   environment bindings, or local development configuration with `.dev.vars`.
 ---

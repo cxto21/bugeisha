@@ -6,7 +6,7 @@ All exported types from `types.ts` with descriptions and usage examples.
 
 ### `Env`
 
-Cloudflare Workers environment with Nesa-specific bindings.
+Cloudflare Workers environment with Bugeisha-specific bindings.
 
 ```typescript
 interface Env {
@@ -23,34 +23,34 @@ interface Env {
 }
 ```
 
-### `NesaRequest`
+### `BugeishaRequest`
 
 Extended Request with agent detection.
 
 ```typescript
-interface NesaRequest extends Request {
+interface BugeishaRequest extends Request {
   isAgent: boolean  // true if request is from AI agent
 }
 ```
 
-### `NesaHandler`
+### `BugeishaHandler`
 
 Handler function signature.
 
 ```typescript
-type NesaHandler = (
-  request: NesaRequest,
+type BugeishaHandler = (
+  request: BugeishaRequest,
   env: Env
 ) => Promise<Response> | Response
 ```
 
-### `NesaMiddleware`
+### `BugeishaMiddleware`
 
 Middleware function signature.
 
 ```typescript
-type NesaMiddleware = (
-  request: NesaRequest,
+type BugeishaMiddleware = (
+  request: BugeishaRequest,
   env: Env
 ) => Promise<Response | void> | Response | void
 ```
@@ -165,9 +165,9 @@ interface ErrorResponse {
 ## Usage Example
 
 ```typescript
-import { Env, NesaRequest, NesaHandler, Agent, Task } from '../types'
+import { Env, BugeishaRequest, BugeishaHandler, Agent, Task } from '../types'
 
-const handler: NesaHandler = async (request: NesaRequest, env: Env) => {
+const handler: BugeishaHandler = async (request: BugeishaRequest, env: Env) => {
   const agent: Agent = {
     id: '123',
     name: 'Worker',

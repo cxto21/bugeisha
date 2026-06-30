@@ -4,14 +4,14 @@ import { detectAgent } from '../middleware/agent-detect';
 import { cors, addCorsHeaders } from '../middleware/cors';
 import { auth } from '../middleware/auth';
 import { rateLimit } from '../middleware/rate-limit';
-import type { NesaRequest, Env } from '../types';
+import type { BugeishaRequest, Env } from '../types';
 
 // Mock request helper
 function mockRequest(opts: {
   url?: string;
   method?: string;
   headers?: Record<string, string>;
-} = {}): NesaRequest {
+} = {}): BugeishaRequest {
   const url = opts.url ?? 'http://localhost/';
   const headers = new Headers(opts.headers ?? {});
   return {
@@ -19,7 +19,7 @@ function mockRequest(opts: {
     method: opts.method ?? 'GET',
     headers,
     agentType: undefined,
-  } as unknown as NesaRequest;
+  } as unknown as BugeishaRequest;
 }
 
 const mockEnv = {} as Env;

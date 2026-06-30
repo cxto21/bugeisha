@@ -1,6 +1,6 @@
 # Quick Start
 
-Get a Nesa app running in 2 minutes.
+Get a Bugeisha app running in 2 minutes.
 
 ## Step 1: Create entry point
 
@@ -19,13 +19,13 @@ router.get('/', (request) => {
 
   if (isAgent) {
     return Response.json({
-      name: 'my-nesa-app',
+      name: 'my-bugeisha-app',
       version: '0.1.0',
       endpoints: { health: '/health' },
     });
   }
 
-  return new Response('<h1>My Nesa App</h1>', {
+  return new Response('<h1>My Bugeisha App</h1>', {
     headers: { 'Content-Type': 'text/html' },
   });
 });
@@ -76,7 +76,7 @@ Open [http://localhost:8787](http://localhost:8787) in your browser.
 npm run deploy
 ```
 
-Your app is now live on `https://my-nesa-app.your-subdomain.workers.dev`.
+Your app is now live on `https://my-bugeisha-app.your-subdomain.workers.dev`.
 
 ## What just happened?
 

@@ -1,10 +1,10 @@
 # CORS Middleware
 
-**CORS middleware** handles Cross-Origin Resource Sharing for your Nesa API. It's explicit and per-handler, not global.
+**CORS middleware** handles Cross-Origin Resource Sharing for your Bugeisha API. It's explicit and per-handler, not global.
 
 ## Why Explicit CORS?
 
-Most frameworks add CORS globally. Nesa makes it explicit because:
+Most frameworks add CORS globally. Bugeisha makes it explicit because:
 
 - **Security** — Only add CORS where you actually need it
 - **Clarity** — See exactly which endpoints allow cross-origin requests
@@ -26,7 +26,7 @@ CORS_ORIGIN = "https://yourdomain.com"
 ```typescript
 import { addCorsHeaders } from '../middleware/cors'
 
-export const homeHandler = async (request: NesaRequest, env: Env) => {
+export const homeHandler = async (request: BugeishaRequest, env: Env) => {
   const response = new Response('Hello')
   return addCorsHeaders(request, response, env)
 }
@@ -54,7 +54,7 @@ When using both CORS and Auth:
 import { addCorsHeaders } from '../middleware/cors'
 import { auth } from '../middleware/auth'
 
-router.get('/protected', async (request: NesaRequest, env: Env) => {
+router.get('/protected', async (request: BugeishaRequest, env: Env) => {
   // Auth first
   const authError = await auth()(request, env)
   if (authError) return authError

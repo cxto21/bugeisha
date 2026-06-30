@@ -1,7 +1,7 @@
 ---
 name: agents-md
 description: >
-  Create AGENTS.md files for Nesa projects. Use this when adding agent instructions
+  Create AGENTS.md files for Bugeisha projects. Use this when adding agent instructions
   to a project, configuring multi-agent coordination, or documenting build/test/style
   rules for AI assistants working on the codebase.
 ---
@@ -44,7 +44,7 @@ Things agents get wrong without this file.
 | Avoid | Business logic, feature docs, user guides → those go in README |
 | Completeness | Cover what an agent MUST know to avoid breaking the build |
 
-## Nesa AGENTS.md Template
+## Bugeisha AGENTS.md Template
 
 ```markdown
 # AGENTS.md — [Project]

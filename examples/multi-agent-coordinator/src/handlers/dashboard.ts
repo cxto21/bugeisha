@@ -90,7 +90,7 @@ POST /agents/YOUR_ID/heartbeat
 <body>
   <div class="container">
     <h1>COORDINATOR</h1>
-    <p class="subtitle">Multi-Agent Task Coordination — Nesa Example</p>
+    <p class="subtitle">Multi-Agent Task Coordination — Bugeisha Example</p>
 
     <div class="links">
       <a href="/chat">Chat</a>

@@ -1,9 +1,9 @@
-import type { NesaRequest, Env } from '../types';
+import type { BugeishaRequest, Env } from '../types';
 
 // Robots.txt handler — agent-native support
 // Tells AI agents how to interact with this service
-export function robots(request: NesaRequest, env: Env): Response {
-  const body = `# Nesa — Agent-Native Robots.txt
+export function robots(request: BugeishaRequest, env: Env): Response {
+  const body = `# Bugeisha — Agent-Native Robots.txt
 # AI agents: crawl freely, respect rate limits
 User-agent: *
 Allow: /

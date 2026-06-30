@@ -1,7 +1,7 @@
 ---
 name: devops
 description: >
-  Test and deploy a Nesa service to Cloudflare Workers. Use this when setting
+  Test and deploy a Bugeisha service to Cloudflare Workers. Use this when setting
   up Vitest for handler testing, running `wrangler deploy`, managing secrets,
   configuring environments (staging/production), or debugging with live logs.
 ---
@@ -16,7 +16,7 @@ Testing + deployment — quality and shipping workflows.
 import { describe, it, expect } from 'vitest';
 import worker from '../src/index';
 
-describe('Nesa worker', () => {
+describe('Bugeisha worker', () => {
   it('GET /health returns 200', async () => {
     const res = await worker.fetch(new Request('http://localhost/health'));
     expect(res.status).toBe(200);

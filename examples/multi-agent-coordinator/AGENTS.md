@@ -1,6 +1,6 @@
 # AGENTS.md — Multi-Agent Coordinator
 
-Nesa example: coordinate multiple AI agents to complete complex tasks.
+Bugeisha example: coordinate multiple AI agents to complete complex tasks.
 
 ## Project Overview
 

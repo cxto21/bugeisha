@@ -1,14 +1,14 @@
 ---
 name: agent-discoverability
 description: >
-  Make a Nesa service findable by AI agents. Use this when configuring robots.txt
+  Make a Bugeisha service findable by AI agents. Use this when configuring robots.txt
   for bot directives, creating llms.txt for service descriptions, generating sitemap.xml
   for endpoint discovery, or optimizing for agent readiness scoring (isitagentready.com).
 ---
 
 # Skill: agent-discoverability
 
-Make your Nesa service findable by AI agents. Built-in handlers: `robots`, `llms`, `sitemap`.
+Make your Bugeisha service findable by AI agents. Built-in handlers: `robots`, `llms`, `sitemap`.
 
 ## Routes (registered by default)
 

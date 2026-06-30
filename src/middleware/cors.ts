@@ -1,8 +1,8 @@
-import type { NesaRequest, Env } from '../types';
+import type { BugeishaRequest, Env } from '../types';
 
 // CORS headers for API endpoints
 export function cors(
-  request: NesaRequest,
+  request: BugeishaRequest,
   env: Env,
 ): Response | void {
   // Only handle preflight OPTIONS

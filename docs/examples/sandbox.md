@@ -1,6 +1,6 @@
 # Sandbox Integration
 
-Secure code execution in Nesa using Cloudflare Sandbox.
+Secure code execution in Bugeisha using Cloudflare Sandbox.
 
 ## Overview
 
@@ -31,7 +31,7 @@ binding = "SANDBOX"
 
 ```typescript
 // src/handlers/execute.ts
-export const executeHandler = async (request: NesaRequest, env: Env) => {
+export const executeHandler = async (request: BugeishaRequest, env: Env) => {
   const { code, language } = await request.json()
   
   // Create or get sandbox
@@ -53,7 +53,7 @@ export const executeHandler = async (request: NesaRequest, env: Env) => {
 Work with files in the sandbox:
 
 ```typescript
-export const fileHandler = async (request: NesaRequest, env: Env) => {
+export const fileHandler = async (request: BugeishaRequest, env: Env) => {
   const sandbox = await env.SANDBOX.get('default')
   
   // Write file
@@ -86,7 +86,7 @@ const sandbox = await env.SANDBOX.get(`user-${userId}`)
 Execute code in multiple languages:
 
 ```typescript
-export const interpreterHandler = async (request: NesaRequest, env: Env) => {
+export const interpreterHandler = async (request: BugeishaRequest, env: Env) => {
   const { language, code } = await request.json()
   
   const sandbox = await env.SANDBOX.get('default')
@@ -112,7 +112,7 @@ export const interpreterHandler = async (request: NesaRequest, env: Env) => {
 Get live preview of running code:
 
 ```typescript
-export const previewHandler = async (request: NesaRequest, env: Env) => {
+export const previewHandler = async (request: BugeishaRequest, env: Env) => {
   const sandbox = await env.SANDBOX.get('default')
   
   // Start a web server in sandbox

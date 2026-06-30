@@ -1,10 +1,10 @@
-# Nesa
+# Bugeisha
 
 **Ultra-light agent-native micro-framework for Cloudflare Workers.**
 
 *Inspired by Parina PHP. Built fresh for the edge.*
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cxto21/nesa)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cxto21/bugeisha)
 
 ---
 
@@ -12,7 +12,7 @@
 
 **Extreme minimalism. Explicit routes. No magic. Linear flow.**
 
-Nesa takes Parina's core principles — clarity over abstraction, control over convenience — and rebuilds them for Cloudflare Workers with Itty Router.
+Bugeisha takes Parina's core principles — clarity over abstraction, control over convenience — and rebuilds them for Cloudflare Workers with Itty Router.
 
 ---
 
@@ -34,7 +34,7 @@ Nesa takes Parina's core principles — clarity over abstraction, control over c
 ## Quick Start
 
 ```bash
-cd nesa
+cd bugeisha
 npm install
 npm run dev
 ```
@@ -53,10 +53,10 @@ export { default } from './router';
 ### Custom router
 
 ```ts
-import { createNesa } from './router';
+import { createBugeisha } from './router';
 import { auth } from './middleware';
 
-const router = createNesa({
+const router = createBugeisha({
   base: '/api',
   middlewares: [auth],
 });
@@ -114,7 +114,7 @@ export default { fetch: router.fetch.bind(router) };
 
 ## Durable Objects Integration
 
-Nesa supports Cloudflare Durable Objects for stateful agent patterns:
+Bugeisha supports Cloudflare Durable Objects for stateful agent patterns:
 
 ```ts
 // wrangler.toml
@@ -177,7 +177,7 @@ Ready-to-deploy example apps:
 
 | Example | Description | Deploy |
 |---------|-------------|--------|
-| [Multi-Agent Coordinator](examples/multi-agent-coordinator/) | Coordinate multiple AI agents with Durable Objects, WebSocket, and sub-agents | [![Deploy](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cxto21/nesa/tree/main/examples/multi-agent-coordinator) |
+| [Multi-Agent Coordinator](examples/multi-agent-coordinator/) | Coordinate multiple AI agents with Durable Objects, WebSocket, and sub-agents | [![Deploy](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cxto21/bugeisha/tree/main/examples/multi-agent-coordinator) |
 
 ---
 

@@ -31,7 +31,7 @@ import { createRateLimiter } from '../middleware/rate-limit'
 
 const limiter = createRateLimiter({ windowMs: 60000, max: 100 })
 
-router.get('/api/data', async (request: NesaRequest, env: Env) => {
+router.get('/api/data', async (request: BugeishaRequest, env: Env) => {
   // Check rate limit
   const error = await limiter(request, env)
   if (error) return error

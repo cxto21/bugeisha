@@ -1,10 +1,10 @@
 # Auth Middleware
 
-**Auth middleware** provides opt-in Bearer token authentication for your Nesa routes. It supports custom validation functions and secure error responses.
+**Auth middleware** provides opt-in Bearer token authentication for your Bugeisha routes. It supports custom validation functions and secure error responses.
 
 ## Why Use Auth Middleware?
 
-Most Nesa endpoints should be **public** by default. Auth middleware is opt-in because:
+Most Bugeisha endpoints should be **public** by default. Auth middleware is opt-in because:
 
 - Public APIs (home, health, discoverability) should always be accessible
 - Agents and bots need to reach your discovery endpoints
@@ -160,7 +160,7 @@ export function auth(options: AuthOptions = {}) {
     publicPaths = ['/health', '/robots.txt', '/llms.txt', '/sitemap.xml']
   } = options;
 
-  return async (request: NesaRequest, env: Env): Response | void => {
+  return async (request: BugeishaRequest, env: Env): Response | void => {
     // Check for API_KEY in environment
     const apiKey = (env as any).API_KEY;
     if (!apiKey) return; // No auth configured
@@ -200,7 +200,7 @@ import { auth } from './middleware/auth';
 
 d describe('auth middleware', () => {
   test('allows requests without API_KEY', async () => {
-    const request = new NesaRequest(new Request('http://localhost/health'));
+    const request = new BugeishaRequest(new Request('http://localhost/health'));
     const env = {};
     
     const middleware = auth();
@@ -218,7 +218,7 @@ import { auth } from './middleware/auth';
 
 d describe('auth on protected routes', () => {
   test('rejects invalid token', async () => {
-    const request = new NesaRequest(new Request('http://localhost/api', {
+    const request = new BugeishaRequest(new Request('http://localhost/api', {
       headers: { 'Authorization': 'Bearer invalid-token' }
     }));
     
@@ -235,7 +235,7 @@ d describe('auth on protected routes', () => {
 
 ### From Parina (PHP) Auth
 
-Parina had centralized authentication in controllers. Nesa moves auth to middleware:
+Parina had centralized authentication in controllers. Bugeisha moves auth to middleware:
 
 ```php
 // Parina - in controller
@@ -245,7 +245,7 @@ if (!isset($_SESSION['user'])) {
 ```
 
 ```ts
-// Nesa - in middleware pipeline
+// Bugeisha - in middleware pipeline
 if (!apiKey || token !== apiKey) {
     return new Response(JSON.stringify({ error: 'Access denied' }), { status: 401 });
 }
@@ -261,7 +261,7 @@ app.get('/api', authenticateToken, (req, res) => {
 ```
 
 ```ts
-// Nesa - per-handler auth pattern
+// Bugeisha - per-handler auth pattern
 router.get('/api', auth(), (request, env) => {
   // Handler logic
 });
@@ -292,4 +292,4 @@ A: Yes, auth runs after agent-detect middleware by default, so agents get JSON e
 - [CORS Middleware](#) - Add CORS support
 - [Agent-Detect Middleware](#) - Learn about agent detection
 
-Auth middleware in Nesa follows the principle: **Explicit, optional, secure by configuration not by default**.
+Auth middleware in Bugeisha follows the principle: **Explicit, optional, secure by configuration not by default**.

@@ -1,7 +1,7 @@
-import type { NesaRequest, Env } from '../types';
+import type { BugeishaRequest, Env } from '../types';
 
 // Detect if user-agent is an AI agent, bot, or human
-export function detectAgent(request: NesaRequest): NesaRequest {
+export function detectAgent(request: BugeishaRequest): BugeishaRequest {
   const ua = request.headers.get('User-Agent')?.toLowerCase() ?? '';
 
   // AI agents

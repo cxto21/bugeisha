@@ -1,7 +1,7 @@
 ---
 name: static-assets
 description: >
-  Serve static files from a Nesa service on Cloudflare Workers. Use this when
+  Serve static files from a Bugeisha service on Cloudflare Workers. Use this when
   adding HTML, CSS, JS, or image assets to an API service, or when deciding
   between Workers static assets and Cloudflare Pages for a full site.
 ---

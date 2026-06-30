@@ -1,7 +1,7 @@
 {
-  "name": "nesa-multi-agent-coordinator",
+  "name": "bugeisha-multi-agent-coordinator",
   "version": "0.1.0",
-  "description": "Multi-agent task coordination — Nesa example",
+  "description": "Multi-agent task coordination — Bugeisha example",
   "private": true,
   "type": "module",
   "scripts": {

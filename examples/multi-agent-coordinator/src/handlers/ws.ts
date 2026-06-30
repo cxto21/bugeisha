@@ -1,5 +1,5 @@
 // WebSocket Handler — Real-time agent communication
-// Nesa style: explicit, no magic, linear flow
+// Bugeisha style: explicit, no magic, linear flow
 
 import type { CoordinatorRequest, Env } from '../types';
 

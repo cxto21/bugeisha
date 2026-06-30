@@ -1,10 +1,10 @@
-# Nesa Manifesto
+# Bugeisha Manifesto
 
 ## *Edge Edition — Where less is more*
 
 ---
 
-Nesa is not a full-stack framework.
+Bugeisha is not a full-stack framework.
 
 It doesn't want to be.
 
@@ -21,7 +21,7 @@ Its purpose is deeper:
 
 In a world full of noise — giant frameworks, hidden layers, generated files, hard-to-follow magic —
 
-Nesa proposes an alternative:
+Bugeisha proposes an alternative:
 
 **extreme simplicity as an act of resistance.**
 
@@ -33,7 +33,7 @@ And that is why it is beautiful.
 
 # 2. The core as a tool, not a cage
 
-Nesa delivers only the essentials:
+Bugeisha delivers only the essentials:
 
 - a router
 - a middleware pipeline
@@ -81,7 +81,7 @@ Same routes. Different responses. No magic.
 
 # 4. Everything that isn't there... is intentional
 
-Nesa does NOT include:
+Bugeisha does NOT include:
 
 - ORM
 - migrations
@@ -105,7 +105,7 @@ A framework you don't understand
 
 is a framework you don't control.
 
-The architecture of Nesa was designed to fit:
+The architecture of Bugeisha was designed to fit:
 
 - on a whiteboard,
 - on a napkin,
@@ -130,7 +130,7 @@ More intention.
 
 More control.
 
-That is the spirit of Nesa.
+That is the spirit of Bugeisha.
 
 That is the spirit of the edge:
 

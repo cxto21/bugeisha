@@ -1,13 +1,13 @@
-import type { NesaRequest, Env } from '../types';
+import type { BugeishaRequest, Env } from '../types';
 
 // Home handler — returns JSON or HTML based on agent type
-export function home(request: NesaRequest, env: Env): Response {
+export function home(request: BugeishaRequest, env: Env): Response {
   const isAgent = request.agentType === 'ai';
 
   if (isAgent) {
     // Machine-readable response for AI agents
     return Response.json({
-      name: 'nesa',
+      name: 'bugeisha',
       version: '0.1.0',
       description: 'Ultra-light agent-native micro-framework for Cloudflare Workers',
       philosophy: 'Extreme minimalism. Explicit routes. No magic. Linear flow.',
@@ -34,7 +34,7 @@ export function home(request: NesaRequest, env: Env): Response {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nesa</title>
+  <title>Bugeisha</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {

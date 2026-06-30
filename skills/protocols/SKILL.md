@@ -1,7 +1,7 @@
 ---
 name: protocols
 description: >
-  Integrate external protocols (MCP, x402) into a Nesa service. Use this when
+  Integrate external protocols (MCP, x402) into a Bugeisha service. Use this when
   adding Model Context Protocol for tool discovery, implementing payment-gated
   endpoints with x402, or connecting to external agent networks. These are
   heavy integrations — add only when specifically needed.
@@ -14,7 +14,7 @@ MCP + x402 — external protocol integrations for agent-native services.
 ## MCP (Model Context Protocol)
 
 ```ts
-// Requires @cloudflare/agents-sdk — NOT bundled with Nesa
+// Requires @cloudflare/agents-sdk — NOT bundled with Bugeisha
 // Use for: tool discovery, function calling, agent-to-agent communication
 
 import { McpAgent } from 'agents/mcp';
@@ -38,7 +38,7 @@ router.all('/mcp/*', (request) => MyMCP.serve('/mcp').fetch(request));
 ## x402 (Payment-gated endpoints)
 
 ```ts
-// Requires x402 npm package — NOT bundled with Nesa
+// Requires x402 npm package — NOT bundled with Bugeisha
 // Use for: paid APIs, micro-payments, usage-based billing
 
 import { verifyPayment } from 'x402/facilitator';
@@ -62,7 +62,7 @@ router.get('/premium-data', async (request) => {
 
 ## Gotchas
 
-- Both MCP and x402 require their own SDK — Nesa stays minimal by design
+- Both MCP and x402 require their own SDK — Bugeisha stays minimal by design
 - MCP via `@cloudflare/agents-sdk` — heavy dependency, add only when needed
 - x402 requires blockchain settlement — not instant like regular auth
 - For simple tool definitions, use `/agent/tools` endpoint instead of full MCP

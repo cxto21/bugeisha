@@ -1,15 +1,15 @@
-import type { NesaRequest, Env } from '../types';
+import type { BugeishaRequest, Env } from '../types';
 
 // llms.txt — agent-friendly service description
 // Standard: https://llmstxt.org/
 // Tells AI agents what this service does in plain language
-export function llms(request: NesaRequest, env: Env): Response {
-  const body = `# Nesa App
+export function llms(request: BugeishaRequest, env: Env): Response {
+  const body = `# Bugeisha App
 
 > Ultra-light agent-native micro-framework for Cloudflare Workers.
 
 ## What this service does
-This is a Nesa-powered API service optimized for AI agents.
+This is a Bugeisha-powered API service optimized for AI agents.
 It provides structured JSON responses for machine consumers
 and clean HTML for human visitors.
 

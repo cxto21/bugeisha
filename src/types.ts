@@ -1,4 +1,4 @@
-// Nesa — Cloudflare Workers environment bindings
+// Bugeisha — Cloudflare Workers environment bindings
 export interface Env {
   // Bindings (uncomment as needed)
   // CACHE: KVNamespace;
@@ -9,8 +9,8 @@ export interface Env {
   // ENVIRONMENT?: string;
 }
 
-// Nesa request extends Request with agent detection
-export interface NesaRequest extends Request {
+// Bugeisha request extends Request with agent detection
+export interface BugeishaRequest extends Request {
   // Detected user-agent type
   agentType?: 'ai' | 'bot' | 'human';
   // Parsed URL
@@ -22,15 +22,15 @@ export interface NesaRequest extends Request {
 }
 
 // Handler signature — receives request + env, returns Response
-export type NesaHandler = (
-  request: NesaRequest,
+export type BugeishaHandler = (
+  request: BugeishaRequest,
   env: Env,
   ctx: ExecutionContext,
 ) => Response | Promise<Response>;
 
 // Middleware signature — return Response to stop, return void/undefined to continue
-export type NesaMiddleware = (
-  request: NesaRequest,
+export type BugeishaMiddleware = (
+  request: BugeishaRequest,
   env: Env,
   ctx: ExecutionContext,
 ) => Response | void | Promise<Response | void>;

@@ -1,13 +1,13 @@
-# Contributing to Nesa
+# Contributing to Bugeisha
 
-How to contribute to the Nesa framework.
+How to contribute to the Bugeisha framework.
 
 ## Development Setup
 
 ```bash
 # Clone the repository
-git clone https://github.com/cxto21/nesa.git
-cd nesa
+git clone https://github.com/cxto21/bugeisha.git
+cd bugeisha
 
 # Install dependencies
 npm install
@@ -22,7 +22,7 @@ npm test
 ## Project Structure
 
 ```
-nesa/
+bugeisha/
 ├── src/
 │   ├── index.ts          # Entry point
 │   ├── router.ts         # Core router
@@ -66,7 +66,7 @@ npm test -- middleware.test.ts
 1. Create `src/middleware/my-middleware.ts`
 2. Export a function with signature:
    ```typescript
-   export const myMiddleware = async (request: NesaRequest, env: Env) => {
+   export const myMiddleware = async (request: BugeishaRequest, env: Env) => {
      // Return Response to stop, void to continue
    }
    ```
@@ -78,7 +78,7 @@ npm test -- middleware.test.ts
 1. Create `src/handlers/my-handler.ts`
 2. Export a handler function:
    ```typescript
-   export const myHandler = async (request: NesaRequest, env: Env) => {
+   export const myHandler = async (request: BugeishaRequest, env: Env) => {
      return Response.json({ data: 'value' })
    }
    ```
@@ -134,4 +134,4 @@ All PRs require review. We check:
 
 ## Gotcha
 
-**Keep it minimal.** Nesa is about extreme simplicity. Don't add features that don't align with the philosophy.
+**Keep it minimal.** Bugeisha is about extreme simplicity. Don't add features that don't align with the philosophy.

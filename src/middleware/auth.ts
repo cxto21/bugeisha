@@ -1,4 +1,4 @@
-import type { NesaRequest, Env } from '../types';
+import type { BugeishaRequest, Env } from '../types';
 
 // Auth options
 interface AuthOptions {
@@ -13,7 +13,7 @@ export function auth(options: AuthOptions = {}) {
     headerName = 'Authorization',
   } = options;
 
-  return (request: NesaRequest, env: Env): Response | void => {
+  return (request: BugeishaRequest, env: Env): Response | void => {
     // Skip auth for public routes
     const url = new URL(request.url);
     if (publicPaths.some(p => url.pathname.startsWith(p))) {

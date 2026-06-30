@@ -1,8 +1,8 @@
 # Multi-Agent Coordinator
 
-A Nesa example: coordinate multiple AI agents to complete complex tasks.
+A Bugeisha example: coordinate multiple AI agents to complete complex tasks.
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cxto21/nesa/tree/main/examples/multi-agent-coordinator)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cxto21/bugeisha/tree/main/examples/multi-agent-coordinator)
 
 ## What It Does
 
@@ -27,7 +27,7 @@ This example integrates key concepts from the Cloudflare Agents SDK:
 ## Quick Start
 
 ```bash
-cd nesa/examples/multi-agent-coordinator
+cd bugeisha/examples/multi-agent-coordinator
 npm install
 npm run dev
 ```

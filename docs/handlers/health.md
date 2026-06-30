@@ -50,7 +50,7 @@ router.get('/health', healthHandler)
 Add your own health checks:
 
 ```typescript
-router.get('/health', async (request: NesaRequest, env: Env) => {
+router.get('/health', async (request: BugeishaRequest, env: Env) => {
   const checks = {
     status: 'healthy',
     timestamp: new Date().toISOString(),

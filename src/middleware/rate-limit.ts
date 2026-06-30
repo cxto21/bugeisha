@@ -1,4 +1,4 @@
-import type { NesaRequest, Env } from '../types';
+import type { BugeishaRequest, Env } from '../types';
 
 // In-memory rate limiter (per-isolate, resets on cold start)
 // For production, use KV or D1 for distributed rate limiting
@@ -13,7 +13,7 @@ interface RateLimitOptions {
 export function rateLimit(options: RateLimitOptions = {}) {
   const { windowMs = 60_000, max = 100, keyBy = 'ip' } = options;
 
-  return (request: NesaRequest, env: Env): Response | void => {
+  return (request: BugeishaRequest, env: Env): Response | void => {
     // Get rate limit key
     let key: string;
     switch (keyBy) {

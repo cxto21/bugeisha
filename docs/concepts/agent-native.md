@@ -15,7 +15,7 @@ Most frameworks ignore this reality. They either:
 - Serve only HTML (agents can't consume it)
 - Duplicate endpoints (`/api/v1/...` vs `/web/...`)
 
-## The Nesa solution
+## The Bugeisha solution
 
 **Same routes, different responses.** One endpoint serves both audiences.
 
@@ -46,7 +46,7 @@ router.get('/data', (request) => {
 
 ### 1. Agent detection
 
-Nesa identifies the request source via User-Agent header:
+Bugeisha identifies the request source via User-Agent header:
 
 ```ts
 import { detectAgent } from './middleware/agent-detect';
