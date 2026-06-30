@@ -2,11 +2,16 @@
 
 Ultra-light agent-native micro-framework for Cloudflare Workers. ~200 LOC. TypeScript + Itty Router v5.
 
-## Qué hace
+## Language Rule
 
-APIs que sirven a dos públicos: **humanos** (HTML) y **agentes IA** (JSON). Misma ruta, distinta respuesta. Sin magia, sin decoradores.
+**All project files, documentation, comments, and commit messages MUST be in English.**  
+The maintainer speaks Spanish, but the codebase is English-only. Never write in Spanish in any project file.
 
-## Cómo levantarlo
+## What It Does
+
+APIs that serve two audiences: **humans** (HTML) and **AI agents** (JSON). Same route, different response. No magic, no decorators.
+
+## How to Run
 
 ```bash
 npm install
@@ -14,7 +19,7 @@ npm run dev        # localhost:8787
 npm test           # 26 tests (vitest)
 ```
 
-## Dónde está cada cosa
+## Project Structure
 
 ```
 src/
@@ -25,48 +30,73 @@ src/
 └── handlers/         # home, health, agent, agent-tools, robots, llms, sitemap
 
 examples/
-└── multi-agent-coordinator/   # Ejemplo completo con DO + WebSocket
+└── multi-agent-coordinator/   # Full example with DO + WebSocket
 
-skills/               # Guías, no código (14 skills)
+skills/               # Guides, not code (14 skills)
+
+docs/
+├── architecture.md   # How it works internally
+├── conventions.md    # Naming, structure, patterns
+├── roadmap.md        # Current status and next steps
+└── decisions/        # Architecture Decision Records
+
+tasks/
+├── TODO.md           # Pending work
+├── current.md        # What I'm doing now
+└── backlog.md        # Ideas and priorities
 ```
 
-## Reglas de estilo
+## Style Rules
 
 - TypeScript strict mode
-- Rutas explícitas (no decoradores, no magia)
-- Middleware retorna `Response` para parar, `void` para continuar
-- Siempre bind: `export default { fetch: router.fetch.bind(router) }`
-- Handlers puros: `(request, env) => Response`
-- Nada que no sea Itty Router como dependencia core
+- Explicit routes (no decorators, no magic)
+- Middleware returns `Response` to stop, `void` to continue
+- Always bind: `export default { fetch: router.fetch.bind(router) }`
+- Pure handlers: `(request, env) => Response`
+- Only Itty Router as core dependency
 
-## Archivos que nunca modificar
+## Files Never to Modify
 
-- `src/router.ts` — Lógica central del framework
-- `src/types.ts` — Tipos compartidos
-- `wrangler.toml` — Config de Cloudflare Workers
-- `package.json` — Dependencias
+- `src/router.ts` — Core logic
+- `src/types.ts` — Shared types
+- `wrangler.toml` — Cloudflare config
+- `package.json` — Dependencies
 
-## Cómo ejecutar tests
+## How to Run Tests
 
 ```bash
-npm test                    # Todos
+npm test                    # All
 npm run test:watch          # Watch mode
-npm test -- middleware       # Solo middleware
-npm test -- handlers        # Solo handlers
+npm test -- middleware       # Middleware only
+npm test -- handlers        # Handlers only
 ```
 
-Tests usan mocks inline ligeros. No instalar dependencias extras para testear.
+Tests use lightweight inline mocks. No extra test dependencies.
 
-## Qué documentación leer primero
+## What to Read First
 
-1. **este archivo** — visión general
-2. `docs/architecture.md` — cómo funciona internamente
-3. `docs/conventions.md` — naming, estructura, patrones
-4. `src/types.ts` — tipos disponibles
+1. **This file** — Overview
+2. `docs/architecture.md` — How it works internally
+3. `docs/conventions.md` — Naming, structure, patterns
+4. `src/types.ts` — Available types
+
+## Agent Protocol
+
+When working on this repo, follow this protocol:
+
+1. **Read** `AGENTS.md` first (this file)
+2. **Read** `CURRENT_TASK.md` to understand current state
+3. **Execute** the task
+4. **Update** `CURRENT_TASK.md` with results
+5. **Add decisions** to `docs/DECISIONS.md` if any were made
+6. **Update** `tasks/TODO.md` if needed
+
+This allows any agent (Claude, Codex, Gemini, etc.) to continue where another left off.  
+Switch models without losing continuity.
 
 ## Gotchas
 
-- `request.url` es string, no URL — usar `new URL(request.url)` para searchParams
-- Rate limit es por-isolate — usar KV/D1 para producción
-- Agent detection es best-effort — agentes pueden spoofear User-Agent
-- KV es eventualmente consistente (~60s) — D1 para consistencia fuerte
+- `request.url` is a string, not a URL — use `new URL(request.url)` for searchParams
+- Rate limit is per-isolate — use KV/D1 for production
+- Agent detection is best-effort — agents can spoof User-Agent
+- KV is eventually consistent (~60s) — D1 for strong consistency
