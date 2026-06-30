@@ -67,3 +67,7 @@ API_KEY=local-dev-key
 - Error responses should be generic for 5xx (don't leak internals)
 - `.dev.vars` is for local only — production uses `wrangler secret put`
 - Structured JSON logs work with log pipelines (Datadog, Logflare, etc.)
+
+## Available scripts
+
+- **`scripts/dev.sh`** — Start local dev with type checking and live reload: `bash scripts/dev.sh [port]`

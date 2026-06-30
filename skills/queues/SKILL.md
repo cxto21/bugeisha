@@ -73,6 +73,10 @@ export default {
 | Rate-limited API calls | Respect external API limits |
 | Ordered operations | Sequential processing guarantee |
 
+## Consumer template
+
+See `scripts/consumer-example.ts` for a complete consumer Worker template with CRUD handlers, error handling, and retry logic. Copy it to a separate Worker project.
+
 ## Gotchas
 
 - Queue consumer runs in a **separate Worker** — no shared state with request handler

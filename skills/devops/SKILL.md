@@ -52,6 +52,14 @@ wrangler tail                     # Live logs
 wrangler rollback                 # Rollback last deploy
 ```
 
+## Pre-deploy check
+
+```bash
+bash scripts/deploy-check.sh
+```
+
+Verifies types, tests, wrangler auth, and secrets before deploying.
+
 ## Gotchas
 
 - Test handlers as pure functions — mock `env` and `ctx`

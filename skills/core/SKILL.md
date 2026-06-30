@@ -44,6 +44,13 @@ export default { fetch: router.fetch.bind(router) };
 - Route order matters — `router.all('*', ...)` must be LAST or it catches everything
 - `error()` from itty-router returns a Response, not throws — no try/catch needed
 
+## Scaffold a new project
+
+```bash
+bash scripts/new.sh my-app
+cd my-app && npm install && npm run dev
+```
+
 ## Factory pattern
 
 Use `createNesa()` for custom instances with different middleware stacks:

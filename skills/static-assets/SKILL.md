@@ -42,6 +42,10 @@ export default {
 | Dynamic assets (generated) | KV with caching |
 | Large files (>10MB) | R2 storage |
 
+## Example HTML
+
+See `assets/example.html` for a starter template with meta tags, structured data (JSON-LD), and responsive design.
+
 ## Gotchas
 
 - `[assets]` directory is relative to `wrangler.toml`
