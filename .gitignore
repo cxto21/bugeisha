@@ -1,4 +1,35 @@
+# MkDocs build output
+site/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
 node_modules/
+npm-debug.log*
+
+# Cloudflare
 .wrangler/
-dist/
 .dev.vars
