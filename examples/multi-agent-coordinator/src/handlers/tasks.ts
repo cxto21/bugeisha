@@ -1,5 +1,5 @@
 // Task Handlers — Create, pick, list, status
-import type { CoordinatorRequest, Env } from './types';
+import type { CoordinatorRequest, Env } from '../types';
 import {
   createTask,
   getTask,

@@ -1,11 +1,11 @@
 // Agent Handlers — Registration, listing, heartbeat
-import type { CoordinatorRequest, Env } from './types';
+import type { CoordinatorRequest, Env } from '../types';
 import {
   registerAgent,
   getAgent,
   getAllAgents,
   updateAgentStatus,
-} from './coordinator';
+} from '../coordinator';
 
 // POST /agents/register — Register a new agent
 export function register(request: CoordinatorRequest, env: Env): Response | Promise<Response> {
