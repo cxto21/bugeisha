@@ -65,6 +65,27 @@ router.get('/protected', ProtectedHandler);
 export default { fetch: router.fetch.bind(router) };
 ```
 
+### With Durable Objects
+
+```ts
+// src/index.ts
+import { Router } from 'itty-router';
+
+const router = Router();
+
+// Regular routes
+router.get('/api/data', handler);
+
+// Durable Object WebSocket
+router.get('/ws/agent/:id', (request, env) => {
+  const agentId = env.AgentDO.idFromName(request.params.id);
+  const stub = env.AgentDO.get(agentId);
+  return stub.fetch(request);
+});
+
+export default { fetch: router.fetch.bind(router) };
+```
+
 ---
 
 ## Endpoints
@@ -74,6 +95,8 @@ export default { fetch: router.fetch.bind(router) };
 | GET | `/` | Home — JSON for agents, HTML for humans |
 | GET | `/health` | Health check |
 | GET | `/robots.txt` | Agent-aware robots.txt |
+| GET | `/llms.txt` | Service description for LLMs |
+| GET | `/sitemap.xml` | Endpoint discovery for agents |
 | GET | `/agent/info` | Service capabilities |
 | GET | `/agent/tools` | Tool definitions for AI function calling |
 
@@ -85,6 +108,32 @@ export default { fetch: router.fetch.bind(router) };
 - **Dual Responses**: JSON for agents, HTML for humans on the same route
 - **Tool Definitions**: OpenAI-compatible function calling format at `/agent/tools`
 - **Robots.txt**: AI-specific directives for GPTBot, ClaudeBot, Anthropic-AI
+- **Agent Discoverability**: robots.txt + llms.txt + sitemap.xml for agent discovery
+
+---
+
+## Durable Objects Integration
+
+Nesa supports Cloudflare Durable Objects for stateful agent patterns:
+
+```ts
+// wrangler.toml
+[durable_objects]
+bindings = [
+  { name = "AgentDO", class_name = "AgentDO" }
+]
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["AgentDO"]
+```
+
+Key features:
+- **Per-agent state**: Each agent gets its own Durable Object instance
+- **WebSocket**: Real-time communication via DO WebSocket support
+- **Callable methods**: RPC-style method invocation via POST
+- **Scheduled tasks**: DO alarms for heartbeats and periodic checks
+- **Sub-agents**: Parent/child agent hierarchy
 
 ---
 
@@ -125,7 +174,15 @@ Ready-to-deploy example apps:
 
 | Example | Description | Deploy |
 |---------|-------------|--------|
-| [Multi-Agent Coordinator](examples/multi-agent-coordinator/) | Coordinate multiple AI agents to complete complex tasks | [![Deploy](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cxto21/nesa/tree/main/examples/multi-agent-coordinator) |
+| [Multi-Agent Coordinator](examples/multi-agent-coordinator/) | Coordinate multiple AI agents with Durable Objects, WebSocket, and sub-agents | [![Deploy](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cxto21/nesa/tree/main/examples/multi-agent-coordinator) |
+
+---
+
+## Learn More
+
+- **[Cloudflare Agents SDK](https://developers.cloudflare.com/agents/)** — Full agent framework with state, RPC, scheduling
+- **[Durable Objects](https://developers.cloudflare.com/durable-objects/)** — Stateful coordination for Workers
+- **[Itty Router](https://itty-router.dev/)** — Lightweight router for Cloudflare Workers
 
 ---
 
