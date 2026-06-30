@@ -150,7 +150,7 @@ Key features:
 
 ## Skills
 
-11 minimal skills in `/skills/` — guides, not code:
+14 minimal skills in `/skills/` — guides, not code:
 
 | Skill | Description |
 |-------|-------------|
@@ -165,6 +165,9 @@ Key features:
 | `queues` | Race condition prevention via Cloudflare Queues |
 | `agent-discoverability` | robots.txt + llms.txt + sitemap for agent discovery |
 | `agents-md` | Create AGENTS.md files for agent instruction |
+| `workers-ai` | Integrate Workers AI with agents (inference, streaming, function calling) |
+| `multi-model` | Orchestrate multiple AI models (routing, fallbacks, pipelines) |
+| `agents-sandbox` | Secure code execution with Cloudflare Sandbox |
 
 ---
 
