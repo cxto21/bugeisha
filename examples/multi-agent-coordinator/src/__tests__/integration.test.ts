@@ -343,6 +343,49 @@ describe('Multi-Agent Coordinator API', () => {
     });
   });
 
+  describe('Agent Discoverability', () => {
+    it('should serve robots.txt', async () => {
+      const request = new Request('http://localhost/robots.txt');
+      const ctx = createMockContext();
+      const response = await worker.fetch(request, env, ctx);
+
+      expect(response.status).toBe(200);
+      expect(response.headers.get('Content-Type')).toContain('text/plain');
+      const body = await response.text();
+      expect(body).toContain('User-agent: GPTBot');
+      expect(body).toContain('User-agent: ClaudeBot');
+      expect(body).toContain('Sitemap:');
+    });
+
+    it('should serve llms.txt', async () => {
+      const request = new Request('http://localhost/llms.txt');
+      const ctx = createMockContext();
+      const response = await worker.fetch(request, env, ctx);
+
+      expect(response.status).toBe(200);
+      expect(response.headers.get('Content-Type')).toContain('text/plain');
+      const body = await response.text();
+      expect(body).toContain('Multi-Agent Coordinator');
+      expect(body).toContain('POST /agents/register');
+      expect(body).toContain('GET /tasks/pick');
+    });
+
+    it('should serve sitemap.xml', async () => {
+      const request = new Request('http://localhost/sitemap.xml');
+      const ctx = createMockContext();
+      const response = await worker.fetch(request, env, ctx);
+
+      expect(response.status).toBe(200);
+      expect(response.headers.get('Content-Type')).toContain('application/xml');
+      const body = await response.text();
+      expect(body).toContain('<?xml version="1.0"');
+      expect(body).toContain('<urlset');
+      expect(body).toContain('/chat');
+      expect(body).toContain('/tasks');
+      expect(body).toContain('/agents');
+    });
+  });
+
   describe('404 Catch-all', () => {
     it('should return 404 for unknown routes', async () => {
       const request = new Request('http://localhost/unknown-route');

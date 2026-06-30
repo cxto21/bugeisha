@@ -18,6 +18,9 @@ import { dashboard } from './handlers/dashboard';
 import { status } from './handlers/status';
 import { logs } from './handlers/logs';
 import { chatUI, send, messages } from './handlers/chat';
+import { robots } from './handlers/robots';
+import { llms } from './handlers/llms';
+import { sitemap } from './handlers/sitemap';
 
 // Router
 const router = Router({
@@ -34,6 +37,11 @@ router.get('/', home);
 router.get('/dashboard', dashboard);
 router.get('/status', status);
 router.get('/logs', logs);
+
+// ─── Agent Discoverability ──────────────────────────────
+router.get('/robots.txt', robots);
+router.get('/llms.txt', llms);
+router.get('/sitemap.xml', sitemap);
 
 // ─── Chat ────────────────────────────────────────────────
 router.get('/chat', chatUI);
