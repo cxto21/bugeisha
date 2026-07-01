@@ -18,7 +18,7 @@
 
 - [ ] More examples (Workers AI, Sandbox)
 - [ ] TypeScript declarations file (.d.ts)
-- [ ] npm package publish
+- [ ] npm package publish (remove `"private": true` from package.json first)
 - [ ] More comprehensive error handling
 
 ## Medium Term

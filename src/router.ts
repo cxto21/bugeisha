@@ -51,10 +51,11 @@ router.all('*', () => error(404, 'Not found'));
 export function createBugeisha(options?: {
   base?: string;
   middlewares?: any[];
+  rateLimit?: { windowMs: number; max: number };
 }) {
   const r = Router({
     base: options?.base,
-    before: options?.middlewares ?? [detectAgent, cors],
+    before: options?.middlewares ?? [detectAgent, cors, rateLimit(options?.rateLimit ?? { windowMs: 60_000, max: 100 })],
     catch: (err) => error(err),
     finally: [json],
   });

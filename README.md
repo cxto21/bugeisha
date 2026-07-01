@@ -2,7 +2,7 @@
 
 **Ultra-light agent-native micro-framework for Cloudflare Workers.**
 
-*Inspired by Parina PHP. Built fresh for the edge.*
+*Inspired by [Parina PHP](https://github.com/nicholasb/parina) — clarity over abstraction, control over convenience. Built fresh for the edge.*
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cxto21/bugeisha)
 
@@ -150,24 +150,13 @@ Key features:
 
 ## Skills
 
-14 minimal skills in `/skills/` — guides, not code:
+3 minimal skills in `/skills/` — guides, not code:
 
 | Skill | Description |
 |-------|-------------|
 | `core` | Router + middleware pipeline |
-| `security` | CORS, rate limiting, JWT auth |
 | `agent-native` | Agent detection, dual responses, robots.txt, AGENTS.md |
 | `storage` | KV + D1 persistence |
-| `devex` | Logger, errors, env config |
-| `protocols` | MCP + x402 integrations |
-| `devops` | Testing + deployment |
-| `static-assets` | Serve static files |
-| `queues` | Race condition prevention via Cloudflare Queues |
-| `agent-discoverability` | robots.txt + llms.txt + sitemap for agent discovery |
-| `agents-md` | Create AGENTS.md files for agent instruction |
-| `workers-ai` | Integrate Workers AI with agents (inference, streaming, function calling) |
-| `multi-model` | Orchestrate multiple AI models (routing, fallbacks, pipelines) |
-| `agents-sandbox` | Secure code execution with Cloudflare Sandbox |
 
 ---
 

@@ -13,8 +13,6 @@ export interface Env {
 export interface BugeishaRequest extends Request {
   // Detected user-agent type
   agentType?: 'ai' | 'bot' | 'human';
-  // Parsed URL
-  url: URL;
   // Route params (from Itty Router)
   params?: Record<string, string>;
   // Query params

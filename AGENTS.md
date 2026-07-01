@@ -17,6 +17,8 @@ APIs that serve two audiences: **humans** (HTML) and **AI agents** (JSON). Same 
 npm install
 npm run dev        # localhost:8787
 npm test           # 26 tests (vitest)
+npm run lint       # ESLint
+npm run typecheck  # TypeScript strict check
 ```
 
 ## Project Structure
@@ -32,7 +34,7 @@ src/
 examples/
 └── multi-agent-coordinator/   # Full example with DO + WebSocket
 
-skills/               # Guides, not code (14 skills)
+skills/               # Guides, not code (3 skills)
 
 docs/
 ├── architecture.md   # How it works internally
@@ -55,12 +57,14 @@ tasks/
 - Pure handlers: `(request, env) => Response`
 - Only Itty Router as core dependency
 
-## Files Never to Modify
+## Files to Modify with Care
 
-- `src/router.ts` — Core logic
-- `src/types.ts` — Shared types
-- `wrangler.toml` — Cloudflare config
-- `package.json` — Dependencies
+These files define the framework's core. Changes here affect all users:
+
+- `src/router.ts` — Core logic (document decisions in `docs/decisions/`)
+- `src/types.ts` — Shared types (backwards compatibility matters)
+- `wrangler.toml` — Cloudflare config (test with `wrangler dev`)
+- `package.json` — Dependencies (keep minimal, justify additions)
 
 ## How to Run Tests
 
@@ -69,6 +73,9 @@ npm test                    # All
 npm run test:watch          # Watch mode
 npm test -- middleware       # Middleware only
 npm test -- handlers        # Handlers only
+npm run lint                # ESLint check
+npm run lint:fix            # Auto-fix lint issues
+npm run typecheck           # TypeScript strict check
 ```
 
 Tests use lightweight inline mocks. No extra test dependencies.

@@ -16,10 +16,28 @@ Agent detection, dual responses, robots.txt, AGENTS.md — agent optimization.
 ```ts
 import type { BugeishaRequest } from './types';
 
-export function detectAgent(request: BugeishaRequest): void {
+export function detectAgent(request: BugeishaRequest): BugeishaRequest {
   const ua = request.headers.get('User-Agent')?.toLowerCase() ?? '';
-  request.isAgent = ['openai', 'gpt', 'claude', 'anthropic', 'bot', 'curl']
-    .some(p => ua.includes(p));
+
+  const aiPatterns = [
+    'openai', 'gpt', 'claude', 'anthropic', 'cohere', 'llama',
+    'chatgpt', 'bard', 'gemini', 'perplexity', 'you.com',
+    'ai-agent', 'langchain', 'autogpt', 'agent',
+  ];
+
+  const botPatterns = [
+    'googlebot', 'bingbot', 'slurp', 'duckduckbot', 'baiduspider',
+  ];
+
+  if (aiPatterns.some(p => ua.includes(p))) {
+    request.agentType = 'ai';
+  } else if (botPatterns.some(p => ua.includes(p))) {
+    request.agentType = 'bot';
+  } else {
+    request.agentType = 'human';
+  }
+
+  return request;
 }
 ```
 
@@ -30,7 +48,7 @@ export function detectAgent(request: BugeishaRequest): void {
 router.get('/', (request: BugeishaRequest) => {
   const data = { service: 'my-api', version: '1.0', endpoints: [...] };
 
-  if (request.isAgent) {
+  if (request.agentType === 'ai') {
     return Response.json(data, {
       headers: { 'X-Agent-Optimized': 'true' },
     });

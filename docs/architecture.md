@@ -26,7 +26,7 @@ Request
 ### Types (`src/types.ts`)
 
 - `Env` — Cloudflare Workers environment bindings (KV, DO, env vars)
-- `BugeishaRequest` — Request with `isAgent: boolean` flag
+- `BugeishaRequest` — Request with `agentType: 'ai' | 'bot' | 'human'` flag
 - `BugeishaHandler` — `(request: BugeishaRequest, env: Env) => Response`
 - `BugeishaMiddleware` — `(request: BugeishaRequest, env: Env) => Response | void`
 
@@ -45,7 +45,7 @@ Handlers are pure functions. They receive a request and env, return a Response.
 **Dual response pattern:**
 ```typescript
 export const home = (request: BugeishaRequest, env: Env) => {
-  if (request.isAgent) {
+  if (request.agentType === 'ai') {
     return Response.json({ name: 'bugeisha' })
   }
   return new Response('<html>...</html>')

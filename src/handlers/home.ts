@@ -53,7 +53,7 @@ export function home(request: BugeishaRequest, env: Env): Response {
 </head>
 <body>
   <div class="container">
-    <h1>NESA</h1>
+    <h1>BUGEISHA</h1>
     <p>Ultra-light agent-native micro-framework for Cloudflare Workers.</p>
     <p style="margin-top: 0.5rem; color: #666;">Extreme minimalism. Explicit routes. No magic. Linear flow.</p>
     <div class="links">
